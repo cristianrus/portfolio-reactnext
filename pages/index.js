@@ -3,14 +3,6 @@ import BaseLayout from '../components/layouts/BaseLayouts';
 import SuperComponent from '../components/SuperComponent';
 import axios from 'axios';
 
-// Dumb (functional component) - get data - return data
-/*const Index = () => {
-    return(
-        <div> Welcome Page!</div>
-    )
-}*/
-
-// Class component - more functionnality - lifecycle functions or methods
 class Index extends SuperComponent {
 
     static async getInitialProps() {
@@ -31,8 +23,6 @@ class Index extends SuperComponent {
             title: 'I am index page'
         }
 
-        //this.updateTitle = this.updateTitle.bind(this);
-        // pass reference instead of arrow function onclick
     }
 
     componentDidMount() {
@@ -56,7 +46,7 @@ class Index extends SuperComponent {
         const { userData, initialData} = this.props;
         return (
             <BaseLayout>
-                <h1> Welcome Index from Class Component!</h1>
+                <h1> Welcome Index from Class Component and I was updated!</h1>
                 <h2>{title}</h2>
                 <h2>{userData.title}</h2>
                 <button onClick={this.updateTitle}>Change title</button>
