@@ -1,29 +1,74 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Link from 'next/link'
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem
+} from 'reactstrap';
 
-import '../../styles/main.scss'
-
-class Header extends React.Component {
-    render() {
-        const title = this.props.title;
-        return(
-            <React.Fragment>
-                <a>{ title }</a>
-                { this.props.children }
-                <p className='customClass'>I am a styled P element</p>
-                <p className='customClassFrontFile'>I am a styled P element</p>
-                <Link href="/"><a style={{'fontSize': '20px'}}>Home</a></Link>
-                <Link href="/about"><a title="About Page">About</a></Link>
-                <Link href="/portfolios"><a>Portfolio</a></Link>
-                <Link href="/blogs"><a>Blog</a></Link>
-                <Link href="/cv"><a>CV</a></Link>
-                <style jsx>{`
-                    a {font-size: 20px; text-decoration: none;}
-                    .customClass {color: red;}
-                `}</style>
-            </React.Fragment>
-        )
-    }
+const BsNavLink = (props) => {
+    const { route, title } = props;
+    return (
+        <Link href={route}><a className="nav-link">{title}</a></Link>
+    )
 }
 
-export default Header
+const Header = (props) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () => setIsOpen(!isOpen);
+
+    return (
+        <div>
+            <Navbar color="light" light expand="md">
+                <NavbarBrand href="/">freelance-web.dev</NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav className="mr-auto" navbar>
+                        <NavItem>
+                            <BsNavLink route="/" title="Accueil" />
+                        </NavItem>
+                        <NavItem>
+                            <BsNavLink route="/about" title="About" />
+                        </NavItem>
+                        <NavItem>
+                            <BsNavLink route="/portfolios" title="Portfolio" />
+                        </NavItem>
+                        <NavItem>
+                            <BsNavLink route="/blogs" title="Blog" />
+                        </NavItem>
+                        <NavItem>
+                            <BsNavLink route="/CV" title="CV" />
+                        </NavItem>
+                        <UncontrolledDropdown nav inNavbar>
+                            <DropdownToggle nav caret>
+                                Options
+                            </DropdownToggle>
+                            <DropdownMenu right>
+                                <DropdownItem>
+                                    Option 1
+                                </DropdownItem>
+                                <DropdownItem>
+                                    Option 2
+                                </DropdownItem>
+                                <DropdownItem divider />
+                                <DropdownItem>
+                                    Reset
+                                </DropdownItem>
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
+                    </Nav>
+                </Collapse>
+            </Navbar>
+        </div>
+    );
+}
+
+export default Header;
