@@ -16,7 +16,7 @@ import {
 const BsNavLink = (props) => {
     const { route, title } = props;
     return (
-        <Link href={route}><a className="nav-link">{title}</a></Link>
+        <Link href={route}><a className="nav-link port-navbar-link">{title}</a></Link>
     )
 }
 
@@ -27,24 +27,24 @@ const Header = (props) => {
 
     return (
         <div>
-            <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">freelance-web.dev</NavbarBrand>
+            <Navbar className="port-navbar port-default absolute" color="transparent" dark expand="md">
+                <NavbarBrand className="port-navbar-brand" href="/">freelance-web.dev</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
-                        <NavItem>
+                        <NavItem className="port-navbar-item">
                             <BsNavLink route="/" title="Accueil" />
                         </NavItem>
-                        <NavItem>
+                        <NavItem className="port-navbar-item">
                             <BsNavLink route="/about" title="About" />
                         </NavItem>
-                        <NavItem>
+                        <NavItem className="port-navbar-item">
                             <BsNavLink route="/portfolios" title="Portfolio" />
                         </NavItem>
-                        <NavItem>
+                        <NavItem className="port-navbar-item">
                             <BsNavLink route="/blogs" title="Blog" />
                         </NavItem>
-                        <NavItem>
+                        <NavItem className="port-navbar-item">
                             <BsNavLink route="/CV" title="CV" />
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>

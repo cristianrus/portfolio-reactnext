@@ -3,6 +3,9 @@
 //PAGES
 @import './index';
 
+//COMPONENTS
+@import './header';
+
 
 html, body {
   height:100%;
@@ -16,6 +19,50 @@ html, body {
 .self-typed {
   font-size: 2rem !important;
   color: white !important;
-  font-weight: bold;
-  letter-spacing: 2px !important;
+  font-weight: 300;
+  letter-spacing: 5px !important;
+}
+.absolute {
+  position: absolute;
+}
+
+.base-page {
+  padding-top: 150px;
+  color: white;
+}
+
+.navbar-expand-md .navbar-collapse {
+  font-family: acumin-pro-semi-condensed, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+}
+@media (min-width: 768px) {
+.navbar-expand-md .navbar-collapse {
+  display: grid !important;
+  justify-content: end !important;
+  }
+  ul.mr-auto.navbar-nav {
+  }
+}
+
+.port-navbar.port-default .port-navbar-brand {
+  font-size: 1.3rem !important;
+  text-transform: none;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.port-navbar.port-default .port-navbar-link {
+  color: white;
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: none;
+}
+
+.hero-welcome-bio > h1 {
+  font-size: 1.5rem !important;
+  font-weight: 200 !important;
+}
+
+.hero-section h2 {
+  font-size: 1.5rem;
+  font-weight: 200 !important;
 }

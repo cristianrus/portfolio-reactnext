@@ -25,7 +25,7 @@ class Index extends React.Component {
                                     <div className={`flipper`}>
                                         <div className="back">
                                             <div className="hero-section-content">
-                                                <h2> Full Stack Web Developer </h2>
+                                                <h2 style={{textAlign: 'center'}}> Dévelopeur web freelance full stack</h2>
                                                 <div className="hero-section-content-intro">
                                                     Have a look at my portfolio and job history.
                                                 </div>
@@ -41,7 +41,7 @@ class Index extends React.Component {
                             <Col md="6" className="hero-welcome-wrapper">
                                 <div className="hero-welcome-text">
                                     <h1>
-                                        Welcome to the portfolio website of Filip Jerga.
+                                        Welcome to the portfolio website of freelance-web.dev.
                                         Get informed, collaborate and discover projects!
                                     </h1>
                                 </div>
