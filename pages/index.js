@@ -7,7 +7,10 @@ class Index extends React.Component {
 
     constructor(props) {
         super(props);
-        this.roles = ['Developer', 'Tech Lover', 'Team Player', 'Course Creator', 'React.js', 'Angular'];
+        this.roles = ['Création site Internet', 'Website design UI - UX', 'Boutiques en ligne e-commerce', 'Applications Responsive Web Design',
+            'React.js développement front-end',
+            'Magento plateforme de vente en ligne', 'Drupal système de gestion de contenu',
+            'React Native applications mobiles'];
     }
 
     render() {
@@ -41,8 +44,8 @@ class Index extends React.Component {
                             <Col md="6" className="hero-welcome-wrapper">
                                 <div className="hero-welcome-text">
                                     <h1>
-                                        Welcome to the portfolio website of freelance-web.dev.
-                                        Get informed, collaborate and discover projects!
+                                        Web design, création de site Internet mobile -
+                                        responsive web design - e-commerce freelance à Paris : freelance-web.dev.
                                     </h1>
                                 </div>
                                 <Typed
@@ -62,7 +65,7 @@ class Index extends React.Component {
                                 />
                                 <div className="hero-welcome-bio">
                                     <h1>
-                                        Let's take a look on my work.
+                                        Découvrir nos développements web.
                                     </h1>
                                 </div>
                             </Col>

@@ -12,6 +12,7 @@ import {
     DropdownMenu,
     DropdownItem
 } from 'reactstrap';
+import auth0 from '../../services/auth0';
 
 const BsNavLink = (props) => {
     const { route, title } = props;
@@ -19,6 +20,19 @@ const BsNavLink = (props) => {
         <Link href={route}><a className="nav-link port-navbar-link">{title}</a></Link>
     )
 }
+
+const Login = () => {
+    return (
+        <span onClick={auth0.login} className="nav-link port-navbar-link clickable">Login</span>
+    )
+}
+
+const Logout = () => {
+    return (
+        <span className="nav-link port-navbar-link clickable">Logout</span>
+    )
+}
+
 
 const Header = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -47,23 +61,12 @@ const Header = (props) => {
                         <NavItem className="port-navbar-item">
                             <BsNavLink route="/CV" title="CV" />
                         </NavItem>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
-                                Options
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem>
-                                    Option 1
-                                </DropdownItem>
-                                <DropdownItem>
-                                    Option 2
-                                </DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>
-                                    Reset
-                                </DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
+                        <NavItem className="port-navbar-item">
+                            <Login />
+                        </NavItem>
+                        <NavItem className="port-navbar-item">
+                            <Logout />
+                        </NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>
